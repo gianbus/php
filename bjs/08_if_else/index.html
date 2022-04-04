@@ -19,17 +19,37 @@
                 <div class="card-body">
                     <div class="row no-gutters">
                         <div class="col">
-                            <h3 class="card-title m-0"><span id="answerField">Вы загадали число 5?</span></h3>
+                            <h3 class="card-title m-0"><span id="answerField">Я всё загадываю</span></h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="row no-gutters">
+                        <div class="col">
+                            <form id = "form" onsubmit="assign(this)"> 
+                                <!-- <p id="error" hidden>Номер не был введен. Будет выбрано значение по умолчанию.</p>
+                                <p id="error2" hidden>Это слишком низко. Будет выбрано значение по умолчанию.</p>
+                                <p id="error3" hidden>Это слишком большое. Будет выбрано значение по умолчанию.</p> -->
+                                <label for="MinMax">
+                                    Минимальное знание числа для игры: 
+                                </label>
+                                <input type="text" id="MinMax" name="Edge" placeholder="Выберите число" required>
+                                <span class="validity"></span>
+                                <button type = "submit" id="btnSubmit">Submit</button> 
+                            </form>
                         </div>
                     </div>
                 </div>
                 <div class="card-body">
                     <div class="btn-group">
+                        
                         <button class="btn btn-info" id="btnLess">&#129047;<br>меньше</button>
-                        <button class="btn btn-success btn-lg" onclick="solution()" id="btnEqual">Верно!
 
+                        <button class="btn btn-success btn-lg" onclick="solution()" id="btnEqual">Верно!
                         </button>
+
                         <button class="btn btn-info" id="btnOver">больше<br>&#129045;</button>
+
                     </div>
                 </div>
                 <div class="card-footer">

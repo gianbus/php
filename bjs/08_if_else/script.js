@@ -1,4 +1,5 @@
-let minValue = parseInt(prompt('Минимальное знание числа для игры','0'));
+document.getElementById("MinMax").value.addEventListener("submit", assign);
+let minValue = 0;
 minValue = (minValue < -999) ? minValue = -999: minValue;
 if (minValue == 999 || isNaN(minValue) || (typeof(minValue) != "number") || (minValue == ("Infinity"||"-Infinity") ) ) {
     minValue = 0;
@@ -9,6 +10,11 @@ if ( maxValue == -999 || maxValue <= minValue || isNaN(maxValue) || (typeof(maxV
     maxValue = (minValue >= 0) ? maxValue = minValue+100: maxValue = 100;
 }
 alert(`Загадайте любое целое число от ${minValue} до ${maxValue}, а я его угадаю`);
+
+function assign(){
+
+}
+
 let answerNumber  = Math.floor((minValue + maxValue) / 2);
 console.log(answerNumber);
 let stringUnits = '';
@@ -22,12 +28,13 @@ let mustRetry = false;
 let gameSolved=false;
 let index = 0;
 
-
 const orderNumberField = document.getElementById('orderNumberField');
 const answerField = document.getElementById('answerField');
 
 orderNumberField.innerText = orderNumber;
 answerField.innerText = `Вы загадали число ${answerNumberToWord }?`;
+
+
 
 document.getElementById('btnRetry').addEventListener('click', function () {
     minValue = parseInt(prompt('Минимальное знание числа для игры','0'));
